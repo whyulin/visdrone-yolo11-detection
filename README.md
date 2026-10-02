@@ -15,13 +15,13 @@ VisDrone 的特点：
 所有实验均在 VisDrone 上训练 50 轮，使用 YOLO11n 模型。
 严格控制变量，每组对比只改一个参数。
 
-| 实验  | imgsz | batch | 检测头 | 预训练 | 目录名 |
-|------|-------|-------|--------|-----|--------|
-| 基线 640 | 640 | 8     | 标准 | 是   | baseline_640-b8 |
-| 基线 640 (控制变量) | 640 | 是     | 标准 | 是   | baseline_640_b4 |
-| 高分辨率 960 | 960 | 4     | 标准 | 是   | baseline_960_b4 |
-| P2 从零训练 | 640 | 4     | P2 | 否   | yolo11n_p2_640 |
-| P2 + 预训练 | 640 | 4     | P2 | 是   | yolo11n_p2_640_pretrained |
+| 实验 | imgsz | batch | 检测头 | 预训练 | 目录名 |
+|------|-------|-------|--------|--------|--------|
+| 基线 640 | 640 | 8 | 标准 | 是 | baseline_640-b8 |
+| 基线 640 (控制变量) | 640 | 4 | 标准 | 是 | baseline_640_b4 |
+| 高分辨率 960 | 960 | 4 | 标准 | 是 | baseline_960_b4 |
+| P2 从零训练 | 640 | 4 | P2 | 否 | yolo11n_p2_640 |
+| P2 + 预训练 | 640 | 4 | P2 | 是 | yolo11n_p2_640_pretrained |
 
 ## 核心结果
 
@@ -64,15 +64,15 @@ VisDrone 的特点：
 | 03_train_baseline.py | 基线训练（640） |
 | 04_download_p2.py | 下载 P2 模型配置文件 |
 | 05_verify_p2.py | P2 模型 1 轮验证（确认不 OOM） |
-| 06_train_p2_pretrained.py | P2 + 预训练训练 |
-| 07_train_p2_scratch.py | P2 从零训练 |
+| 06_train_p2_scratch.py | P2 从零训练 |
+| 07_train_p2_pretrained.py | P2 + 预训练训练 |
 
 ## 环境
 
 - Python 3.11.16
 - ultralytics 8.4.160
 - PyTorch 2.5.1 + CUDA 12.1
-- GPU: NVIDIA RTX 4060 Lapop (8GB)
+- GPU: NVIDIA RTX 4060 Laptop (8GB)
 
 ## 运行方式
 
@@ -88,4 +88,4 @@ python 03_train_baseline.py
 
 # 4. 下载 P2 配置并训练
 python 04_download_p2.py
-python 06_train_p2_pretrained.py
+python 07_train_p2_pretrained.py
