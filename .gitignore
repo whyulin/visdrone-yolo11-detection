@@ -1,0 +1,7 @@
+.idea/
+__pycache__/
+*.pyc
+datasets/
+runs/
+trains/
+yolo11n.pt
